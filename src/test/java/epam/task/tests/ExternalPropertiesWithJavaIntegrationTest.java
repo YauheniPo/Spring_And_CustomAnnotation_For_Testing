@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.StandardEnvironment;
 import org.springframework.test.context.ContextConfiguration;
@@ -24,7 +25,7 @@ import org.testng.annotations.Test;
 @ContextConfiguration(classes = {ExternalSpringConfig.class, ExternalPropertiesTestConfig.class},
     loader = AnnotationConfigContextLoader.class)
 
-@EnableConfigurationProperties(Database.class) //# 2
+//@EnableConfigurationProperties(Database.class) //# 2
 public class ExternalPropertiesWithJavaIntegrationTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
@@ -44,6 +45,9 @@ public class ExternalPropertiesWithJavaIntegrationTest extends AbstractTestNGSpr
 
     @Test
     public final void givenContextIsInitialized_thenNoException() {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("application.xml");
+        Database db = (Database)ctx.getBean("database");
+
         System.out.println(testValue);
         System.out.println(env.getProperty("test.value"));
         System.out.println(frmName);
