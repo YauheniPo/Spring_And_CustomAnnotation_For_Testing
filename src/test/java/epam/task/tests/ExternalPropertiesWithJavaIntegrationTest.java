@@ -2,20 +2,13 @@ package epam.task.tests;
 
 import epam.task.external.Database;
 import epam.task.external.ExternalSpringConfig;
-import epam.task.external.properties.ExternalPropertiesFrmConfig;
 import epam.task.external.properties.ExternalPropertiesTestConfig;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.StandardEnvironment;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
@@ -45,7 +38,7 @@ public class ExternalPropertiesWithJavaIntegrationTest extends AbstractTestNGSpr
 
     @Test
     public final void givenContextIsInitialized_thenNoException() {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("application.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("application_bean.xml");
         Database db = (Database)ctx.getBean("database");
 
         System.out.println(testValue);
