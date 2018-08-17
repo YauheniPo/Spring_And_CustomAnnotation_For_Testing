@@ -5,7 +5,7 @@
 
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd"
 >
-    <context:component-scan base-package="epam.task" />
+    <context:component-scan base-package="epam.task.poc" />
     <context:property-placeholder location="classpath:*.properties"  />
 
     <bean id="database" class="epam.task.poc.bean_data.Database">

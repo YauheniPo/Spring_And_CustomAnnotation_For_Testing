@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:conf/frm.properties")
+@PropertySource(ignoreResourceNotFound = true, value = "classpath:conf/frm.properties")
 public class ExternalPropertiesFrmConfig {
 
 }

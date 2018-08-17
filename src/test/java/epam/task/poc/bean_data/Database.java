@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Data
-@ConfigurationProperties("database")
+@ConfigurationProperties(ignoreInvalidFields = true, value="database")
 public class Database {
 
     public String url;

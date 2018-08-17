@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-@ConfigurationProperties
+@ConfigurationProperties(ignoreInvalidFields = true)
 public class Database {
 
     public String url;

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-@PropertySource("classpath:database.properties")
+@PropertySource(ignoreResourceNotFound = true, value = "classpath:database.properties")
 public class Database2 {
 
     @Value("${database.url}")
