@@ -1,4 +1,4 @@
-package epam.task.tests;
+package epam.task.external;
 
 import epam.task.external.Database;
 import epam.task.external.ExternalSpringConfig;
