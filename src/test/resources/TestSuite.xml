@@ -3,7 +3,7 @@
 <suite name="EPAM_e.popovich" verbose="1">
     <test name="Test">
         <classes>
-            <class name="epam.task.external.ExternalPropertiesWithJavaIntegrationTest"/>
+            <class name="epam.task.poc.SpringTestNGContextExample"/>
         </classes>
     </test>
 </suite>
