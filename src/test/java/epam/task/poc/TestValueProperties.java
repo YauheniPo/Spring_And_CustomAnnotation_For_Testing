@@ -1,8 +1,6 @@
 package epam.task.poc;
 
-import epam.task.poc.value_properties.Database2;
-import epam.task.poc.value_properties.ExternalPropertiesFrmConfig;
-import epam.task.poc.value_properties.ImportResourceValueProperties;
+import epam.task.poc.value_properties.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -11,8 +9,9 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
 
-@ContextConfiguration(classes = {ImportResourceValueProperties.class, ExternalPropertiesFrmConfig.class},
-    loader = AnnotationConfigContextLoader.class)
+//@ContextConfiguration(classes = {ImportResourceValueProperties.class}, //application_bean #1
+@ContextConfiguration(classes = {ImportResourceValueProperties.class, ExternalPropertiesFrmConfig.class, ExternalPropertiesTestConfig.class}, //application_bean #2
+        loader = AnnotationConfigContextLoader.class)
 public class TestValueProperties extends AbstractTestNGSpringContextTests {
 
     @Autowired
